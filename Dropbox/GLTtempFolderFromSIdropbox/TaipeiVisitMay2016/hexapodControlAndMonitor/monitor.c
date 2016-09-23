@@ -307,9 +307,9 @@ int main() {
   }
 
  mvprintw(27,0,"HPLinearSpeed:");
- mvprintw(27,15,"%.1f",pmac.linearSpeed);
+ mvprintw(27,15,"%.1f",hp.linearSpeed);
  mvprintw(28,0,"HPRotnlSpeed:");
- mvprintw(28,15,"%.1f",pmac.rotSpeed);
+ mvprintw(28,15,"%.1f",hp.rotSpeed);
 
  mvprintw(30,0,"ActuatorsOrder:");
  mvprintw(30,16,"%s",pmac.actuatorOrder);

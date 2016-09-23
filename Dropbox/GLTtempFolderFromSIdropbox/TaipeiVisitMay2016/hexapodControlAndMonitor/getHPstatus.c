@@ -40,7 +40,13 @@ hps getHPstatus() {
   printf("PMAC response: %s",recvBuffer);
 */
 
-sscanf(recvBuffer,"%f %s %f %d %d %d %d %d %s %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %s %s %s %s %s %s %f %f %f %f %f %f",
+sscanf(recvBuffer,
+"%f %s %f %d %d %d %d %d %s %f \ 
+ %f %f %f %f %f %f %f %f %f %f \
+ %f %f %f %f %f %f %f %f %f %f \
+ %f %f %f %f %f %f %f %f %f %f \
+ %f %f %f %f %f %f %f %f %s %s \
+ %s %s %s %s %f %f %f %f %f %f",
 &hp.sysUptime,
 hp.lastCmdCode,
 &hp.lastCmdUptime,
@@ -51,6 +57,7 @@ hp.lastCmdCode,
 &hp.tempWarning,
 hp.coordSysStatus,
 &hp.chopIntegration,
+&hp.linearSpeed, &hp.rotSpeed,
 &hp.X,&hp.Y,&hp.Z,&hp.Rx,&hp.Ry,&hp.Rz,
 &hp.XCmd,&hp.YCmd,&hp.ZCmd,&hp.RxCmd,&hp.RyCmd,&hp.RzCmd,
 &hp.Xt,&hp.Yt,&hp.Zt,&hp.Rxt,&hp.Ryt,&hp.Rzt,

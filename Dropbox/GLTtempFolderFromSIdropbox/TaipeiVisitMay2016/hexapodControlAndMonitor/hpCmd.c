@@ -44,7 +44,7 @@ int main(int argc, char *argv[]) {
 
   char PMAChost[40];
   char HCUsoftwareVersion[32],PMACfirmwareVersion[32];
-  int actuatorsOrder,hexapodLinearSpeed,hexapodRotSpeed;
+  int actuatorsOrder;
 /*
   int sysUptime,lastCmdUptime,lastSysErrorCode,errorCode;
 */
@@ -87,13 +87,11 @@ int main(int argc, char *argv[]) {
   printf("PMAC response: %s\n",recvBuffer);
 
   if(strcmp("i",argv[1])==0){
-  sscanf(recvBuffer,"%d %s %d %d %s", &actuatorsOrder,HCUsoftwareVersion,&hexapodLinearSpeed,&hexapodRotSpeed,PMACfirmwareVersion);
+  sscanf(recvBuffer,"%d %s %s", &actuatorsOrder,HCUsoftwareVersion,PMACfirmwareVersion);
 
   printf("Actuators order inside the hexapod: %d\n",actuatorsOrder);
   printf("HCU software version: %s\n",HCUsoftwareVersion);
   printf("PMAC firmware version: %s\n",PMACfirmwareVersion);
-  printf("Hexapod speed in linear axis (X,Y,Z) in um/s: %d\n",hexapodLinearSpeed);
-  printf("Hexapod speed in rotational axis (Rx,Ry,Rz) in arcsec/s: %d\n",hexapodRotSpeed);
   } else {
   sscanf(recvBuffer,"%s %d %d",sentCmdCode,&timestamp,&exitCode);
   switch (exitCode) {

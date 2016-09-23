@@ -39,11 +39,9 @@ pmacINFO getPMACinfo() {
   printf("PMAC response: %s",recvBuffer);
 */
 
-sscanf(recvBuffer,"%s %s %f %f %s",
+sscanf(recvBuffer,"%s %s %s",
 pmac.actuatorOrder,
 pmac.softwareVersion,
-&pmac.linearSpeed,
-&pmac.rotSpeed,
 pmac.pmacFirmwareVer);
 
   zmq_close(requester);
