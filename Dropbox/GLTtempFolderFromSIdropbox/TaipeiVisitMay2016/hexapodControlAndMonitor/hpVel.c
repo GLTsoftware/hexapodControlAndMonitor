@@ -36,14 +36,11 @@ int main(int argc, char *argv[]) {
 
   /* check validity of requested positions */
  
-/*
-  if(argc<6) {
-  printf("Usage: setAbsPos <x micron> <y micron> <z micron> <tip arcsec>
-<tilt arcsec> <spin arcsec> \n");
-  printf("Usage: setAbsPos 1000.0 2000. 2200. 0.0 0.0 0.0\n");
+  if(argc!=4) {
+  printf("Usage: setAxisVel <linear micron/s> <rotational arcsec/s> \n");
+  printf("Usage: setAxisVel 100.0 100.0\n");
   exit(0);
   }
-*/
 
   sprintf(PMAChost,"tcp://%s:%d",PMAC_HOST_IP,PMAC_HOST_PORT);
 

@@ -37,7 +37,7 @@ int main(int argc, char *argv[]) {
 
   /* check validity of requested positions */
  
-  if(argc<6) {
+  if(argc!=8) {
   printf("Usage: setAbsPos <x micron> <y micron> <z micron> <tip arcsec>\n");
   printf("              <tilt arcsec> <spin arcsec> \n");
   printf("E.g.: setAbsPos 1000.0 2000. 2200. 0.0 0.0 0.0\n");
@@ -46,12 +46,12 @@ int main(int argc, char *argv[]) {
 
   sprintf(PMAChost,"tcp://%s:%d",PMAC_HOST_IP,PMAC_HOST_PORT);
 
-  cmdXum = atof(argv[1]);
-  cmdYum = atof(argv[2]);
-  cmdZum = atof(argv[3]);
-  cmdTipArcsec = atof(argv[4]);
-  cmdTiltArcsec = atof(argv[5]);
-  cmdSpinArcsec = atof(argv[6]);
+  cmdXum = atof(argv[2]);
+  cmdYum = atof(argv[3]);
+  cmdZum = atof(argv[4]);
+  cmdTipArcsec = atof(argv[5]);
+  cmdTiltArcsec = atof(argv[6]);
+  cmdSpinArcsec = atof(argv[7]);
 
   if((cmdXum<XNEGLIM)||(cmdXum>XPOSLIM)) {
   printf("Invalid commanded X; should be between XNEGLIM and XPOSLIM.\n");
