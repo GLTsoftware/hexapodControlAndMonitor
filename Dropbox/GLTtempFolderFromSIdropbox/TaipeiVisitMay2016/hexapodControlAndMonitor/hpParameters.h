@@ -124,6 +124,7 @@ struct hpStatusVariable {
   float sysUptime;
   int lastCmdUptime;
   float chopIntegration;
+  float linearSpeed,rotSpeed;
   float X,Y,Z,Rx,Ry,Rz,Xt,Yt,Zt,Rxt,Ryt,Rzt;
   float XCmd,YCmd,ZCmd,RxCmd,RyCmd,RzCmd;
   float act[6];
@@ -135,7 +136,6 @@ struct hpStatusVariable {
 struct pmacInfo {
   char actuatorOrder[32];
   char softwareVersion[32];
-  float linearSpeed,rotSpeed;
   char pmacFirmwareVer[32];
 };
 
