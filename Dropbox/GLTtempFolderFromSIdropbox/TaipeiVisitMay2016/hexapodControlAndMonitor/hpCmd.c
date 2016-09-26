@@ -49,7 +49,7 @@ int main(int argc, char *argv[]) {
   int sysUptime,lastCmdUptime,lastSysErrorCode,errorCode;
 */
 
-  if(argc<1) {
+  if(argc<2) {
   printf("Usage: hexapodCommand <char>  \n");
   printf("Where <char> is one of the following:\n");
   printf("s: shutdown - switch off the +65V dc power, open loops\n");
